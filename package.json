@@ -1,0 +1,28 @@
+{
+  "name": "nice-date-js",
+  "version": "0.0.1",
+  "description": "JavaScript date utility library",
+  "main": "dist/nd.js",
+  "scripts": {
+    "clear": "rm -rf dist",
+    "watch": "babel src -w --out-dir dist",
+    "prod": "babel src -c true --out-dir dist",
+    "dev": "babel src --out-dir dist",
+    "test": "mocha test/test.js"
+  },
+  "keywords": [
+    "js",
+    "date",
+    "utility",
+    "util",
+    "span",
+    "format"
+  ],
+  "author": "Johan West",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^4.7.8",
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1"
+  }
+}
