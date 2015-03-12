@@ -245,6 +245,7 @@ E.g. useful when working with dates for calendar or similar.
 date.daysOf("week").forEach(function(day) {
   console.log(new Date(day));
 });
+```
 
 Console output:
 
