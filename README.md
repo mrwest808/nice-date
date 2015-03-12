@@ -9,13 +9,15 @@
 
 ## Installation
 
-Node.js:
+NPM:
 
 ```
 npm i --save nice-date
 ```
 
-```
+Require in Node.js:
+
+```javascript
 var NiceDate = require('nice-date');
 ```
 
