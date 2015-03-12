@@ -4,6 +4,13 @@
 
 1. [Installation](#installation)
 2. [Usage](#usage)
+  - [Default Options](#default-options)
+  - [Instantiate](#instantiate)
+  - [get](#get)
+  - [diff](#diff)
+  - [add](#add)
+  - [sub](#sub)
+  - [daysOf](#daysof)
 3. [Upcoming](#upcoming)
 4. [License](#license)
 
