@@ -75,10 +75,8 @@ var show = {
    * @return {String}
    */
   isoDate() {
-    let [y, m, d] = utl.extract(this.d),
-        out = `${y}-${m}-${d}`;
-
-    return out;
+    let [y, m, d] = utl.extract(this.d);
+    return `${y}-${m}-${d}`;
   },
 
   /**
@@ -87,10 +85,8 @@ var show = {
    * @return {String}
    */
   isoDateTime() {
-    let [y, m, d, h, mi] = utl.extract(this.d),
-        out = `${y}-${m}-${d} ${h}:${mi}`;
-
-    return out;
+    let [y, m, d, h, mi] = utl.extract(this.d);
+    return `${y}-${m}-${d} ${h}:${mi}`;
   }
 
 };

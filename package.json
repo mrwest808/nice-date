@@ -1,5 +1,5 @@
 {
-  "name": "nice-date-js",
+  "name": "nice-date",
   "version": "0.0.1",
   "description": "JavaScript date utility library",
   "main": "dist/nd.js",
@@ -11,6 +11,7 @@
     "test": "mocha test/test.js"
   },
   "keywords": [
+    "tiny",
     "js",
     "date",
     "utility",
@@ -20,6 +21,10 @@
   ],
   "author": "Johan West",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrwest808/nice-date"
+  },
   "devDependencies": {
     "babel": "^4.7.8",
     "chai": "^2.1.1",

@@ -83,9 +83,8 @@ var show = {
     var y = _utl$extract2[0];
     var m = _utl$extract2[1];
     var d = _utl$extract2[2];
-    var out = "" + y + "-" + m + "-" + d;
 
-    return out;
+    return "" + y + "-" + m + "-" + d;
   },
 
   /**
@@ -103,9 +102,8 @@ var show = {
     var d = _utl$extract2[2];
     var h = _utl$extract2[3];
     var mi = _utl$extract2[4];
-    var out = "" + y + "-" + m + "-" + d + " " + h + ":" + mi;
 
-    return out;
+    return "" + y + "-" + m + "-" + d + " " + h + ":" + mi;
   }
 
 };
