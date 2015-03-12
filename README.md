@@ -34,7 +34,7 @@ var NiceDate = require('nice-date');
 
 Options determine how date related strings are displayed, below are the default options.
 
-```
+```javascript
 {
 
   months: [
@@ -248,24 +248,24 @@ date.daysOf("calendarMonth"); // -> see below
 date.daysOf("cm");            // -> see below
 ```
 
-E.g. useful when working with dates for calendar or similar.
+While the **month** measure will collect all days between the first and the last day of the month, **calendarMonth** will in addition collect days between the month start and the first day of that week, as well as the days between the month end and the last day of that week. Useful when working with e.g. a calendar.
 
 ```javascript
 date.daysOf("week").forEach(function(day) {
-  console.log(new Date(day));
+  console.log(new NiceDate(day).get("weekday"));
 });
 ```
 
 Console output:
 
 ```
--> Mon Mar 09 2015 01:00:00 GMT+0100 (CET)
--> Tue Mar 10 2015 01:00:00 GMT+0100 (CET)
--> Wed Mar 11 2015 01:00:00 GMT+0100 (CET)
--> Thu Mar 12 2015 01:00:00 GMT+0100 (CET)
--> Fri Mar 13 2015 01:00:00 GMT+0100 (CET)
--> Sat Mar 14 2015 01:00:00 GMT+0100 (CET)
--> Sun Mar 15 2015 01:00:00 GMT+0100 (CET)
+-> Monday
+-> Tuesday
+-> Wednesday
+-> Thursday
+-> Friday
+-> Saturday
+-> Sunday
 ```
 
 ## Upcoming

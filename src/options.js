@@ -5,7 +5,7 @@
  *
  * @type {Object}
  */
-var defaults = {
+let defaults = {
 
   months: [
     "January",
