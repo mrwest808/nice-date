@@ -1,11 +1,1 @@
-"use strict";
-
-var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
-
-var show = _interopRequire(require("./show"));
-
-var methods = {
-  show: show
-};
-
-module.exports = methods;
+"use strict";var _interopRequire=function(obj){return obj && obj.__esModule?obj["default"]:obj;};var get=_interopRequire(require("./get"));var diff=_interopRequire(require("./diff"));var add=_interopRequire(require("./add"));var daysOf=_interopRequire(require("./daysOf"));var methods={get:get, diff:diff, add:add, daysOf:daysOf};module.exports = methods;

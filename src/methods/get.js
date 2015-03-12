@@ -2,7 +2,21 @@
 
 import {utl} from "../helpers";
 
-var show = {
+/**
+ * Methods for formatting date output.
+ *
+ * @type {Object}
+ */
+let get = {
+
+  /**
+   * Get unix timestamp.
+   *
+   * @return {Number}
+   */
+  unix() {
+    return this.d.getTime();
+  },
 
   /**
    * Get day of month.
@@ -70,6 +84,24 @@ var show = {
   },
 
   /**
+   * Get full year.
+   *
+   * @return {Number}
+   */
+  year() {
+    return this.d.getFullYear();
+  },
+
+  /**
+   * Get short year, 2 digits.
+   *
+   * @return {Number}
+   */
+  yearShort() {
+    return parseInt(this.d.getFullYear().toString().substr(2, 2));
+  },
+
+  /**
    * Show date in ISO format.
    *
    * @return {String}
@@ -92,16 +124,19 @@ var show = {
 };
 
 // Register aliases
-show.d = show.day;
-show.wd = show.weekday;
-show.wds = show.weekdayShort;
-show.w = show.week;
-show.m = show.month;
-show.ms = show.monthShort;
-show.date = show.isoDate;
-show.isod = show.isoDate;
-show.datetime = show.isoDateTime;
-show.dt = show.isoDateTime;
-show.isodt = show.isoDateTime;
+get.u = get.unix;
+get.d = get.day;
+get.wd = get.weekday;
+get.wds = get.weekdayShort;
+get.w = get.week;
+get.m = get.month;
+get.ms = get.monthShort;
+get.y = get.year;
+get.ys = get.yearShort;
+get.date = get.isoDate;
+get.isod = get.isoDate;
+get.datetime = get.isoDateTime;
+get.dt = get.isoDateTime;
+get.isodt = get.isoDateTime;
 
-export default show;
+export default Object.create(get);

@@ -21,6 +21,53 @@ var test = {
   },
 
   /**
+   * Test number.
+   *
+   * @param  {Number}  input
+   * @param  {String}  msg   [Optional]
+   * @return {Boolean}
+   */
+  number: function(input, msg) {
+    msg = msg || "should be number";
+
+    it(msg, function() {
+      expect(input).to.be.a("number");
+    });
+  },
+
+
+  /**
+   * Test number value.
+   *
+   * @param  {Number}  input
+   * @param  {Number}  num
+   * @param  {String}  msg   [Optional]
+   * @return {Boolean}
+   */
+  above: function(input, num, msg) {
+    msg = msg || "should be above " + num;
+
+    it(msg, function() {
+      expect(input).to.be.above(num);
+    });
+  },
+
+  /**
+   * Test positive number.
+   *
+   * @param  {Number}  input
+   * @param  {String}  msg   [Optional]
+   * @return {Boolean}
+   */
+  positiveNumber: function(input, msg) {
+    msg = msg || "should be a positive number";
+
+    it(msg, function() {
+      expect(input).to.be.a("number").above(0);
+    });
+  },
+
+  /**
    * Test length.
    *
    * @param  {Mixed}   input
@@ -95,6 +142,22 @@ var test = {
 
     it(msg, function() {
       expect(input).to.be.a("string").and.not.be.empty;
+    });
+  },
+
+  /**
+   * Test throw error.
+   *
+   * @param  {Function} fn
+   * @param  {Mixed}    err
+   * @param  {String}   msg [Optional]
+   * @return {Boolean}
+   */
+  throwError: function(fn, err, msg) {
+    msg = msg || "should throw " + err;
+
+    it(msg, function() {
+      expect(fn).to.throw(err);
     });
   }
 

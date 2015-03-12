@@ -4,7 +4,21 @@ var _slicedToArray = function (arr, i) { if (Array.isArray(arr)) { return arr; }
 
 var utl = require("../helpers").utl;
 
+/**
+ * Methods for formatting date output.
+ *
+ * @type {Object}
+ */
 var show = {
+
+  /**
+   * Get unix timestamp.
+   *
+   * @return {Number}
+   */
+  unix: function unix() {
+    return this.d.getTime();
+  },
 
   /**
    * Get day of month.
@@ -71,6 +85,24 @@ var show = {
   },
 
   /**
+   * Get full year.
+   *
+   * @return {Number}
+   */
+  year: function year() {
+    return this.d.getFullYear();
+  },
+
+  /**
+   * Get short year, 2 digits.
+   *
+   * @return {Number}
+   */
+  yearShort: function yearShort() {
+    return parseInt(this.d.getFullYear().toString().substr(2, 2));
+  },
+
+  /**
    * Show date in ISO format.
    *
    * @return {String}
@@ -109,16 +141,19 @@ var show = {
 };
 
 // Register aliases
+show.u = show.unix;
 show.d = show.day;
 show.wd = show.weekday;
 show.wds = show.weekdayShort;
 show.w = show.week;
 show.m = show.month;
 show.ms = show.monthShort;
+show.y = show.year;
+show.ys = show.yearShort;
 show.date = show.isoDate;
 show.isod = show.isoDate;
 show.datetime = show.isoDateTime;
 show.dt = show.isoDateTime;
 show.isodt = show.isoDateTime;
 
-module.exports = show;
+module.exports = Object.create(show);

@@ -70,7 +70,10 @@ var defaults = {
     hour:         "h",
     minute:       "m",
     second:       "s",
-    milliseconds: "ms"
+    milliseconds: "ms",
+    past:         "ago",
+    future:       "in",
+    now:          "Just now"
   }
 
 };

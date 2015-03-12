@@ -1,9 +1,15 @@
 'use strict';
 
-import show from "./show";
+import get from "./get";
+import diff from "./diff";
+import add from "./add";
+import daysOf from "./daysOf";
 
 let methods = {
-  show: show
+  get,
+  diff,
+  add,
+  daysOf
 };
 
 export default methods;

@@ -16,7 +16,7 @@ export default class NiceDate {
     date = (typeof date === "undefined" || date == null) ? new Date() : new Date(date);
 
     if(isNaN(date.getTime()))
-      throw new Error("Invalid date format");
+      throw new TypeError("'constructor' - invalid date format");
 
     this.o = (is.object(opts)) ? merge({}, defaults, opts) : defaults;
     this.d = date;
@@ -28,10 +28,69 @@ export default class NiceDate {
    * @param  {String} format
    * @return {String}
    */
-  show(format) {
-    let fn = m.show[format];
+  get(format) {
+    let fn = m.get[format];
     if(!fn)
-      throw new Error("method 'show' - invalid format");
+      throw new ReferenceError("'get' - invalid format");
+
+    return fn.apply(this);
+  }
+
+  /**
+   * Display difference between this.d and now in a nice format.
+   *
+   * @return {String}
+   */
+  diff() {
+    let fn = m.diff;
+    if(!fn)
+      throw new ReferenceError("'diff'");
+
+    return fn.apply(this);
+  }
+
+  /**
+   * Add [num] amount of [format] to a date.
+   *
+   * @param  {Number}   number
+   * @param  {String}   format
+   * @return {Instance}
+   */
+  add(number, format) {
+    let fn = m.add[format];
+    if(!fn)
+      throw new ReferenceError("'add' - invalid format");
+
+    fn.apply(this, [number]);
+    return this;
+  }
+
+  /**
+   * Subtract [num] amount of [format] to a date.
+   *
+   * @param  {Number}   number
+   * @param  {String}   format
+   * @return {Instance}
+   */
+  sub(number, format) {
+    let fn = m.add[format];
+    if(!fn)
+      throw new ReferenceError("'sub' - invalid format");
+
+    fn.apply(this, [-number]);
+    return this;
+  }
+
+  /**
+   * Extract days in a time measure.
+   *
+   * @param  {String} measure
+   * @return {Array}
+   */
+  daysOf(measure) {
+    let fn = m.daysOf[measure];
+    if(!fn)
+      throw new ReferenceError("'days' - invalid measure");
 
     return fn.apply(this);
   }

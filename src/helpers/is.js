@@ -16,7 +16,7 @@ let is = {
 
 };
 
-export default is;
+export default Object.create(is);
 
 // /**
 //  * Verify object.
