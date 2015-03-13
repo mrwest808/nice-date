@@ -16,16 +16,26 @@
 
 ## Installation
 
-NPM:
+### Node.js
+
+Install with npm.
 
 ```
 npm i --save nice-date
 ```
 
-Require in Node.js:
+Require in project.
 
 ```javascript
 var NiceDate = require('nice-date');
+```
+
+### Browser
+
+Save [minified browser version](https://raw.githubusercontent.com/mrwest808/nice-date/master/nd.min.js) locally and include in a script tag.
+
+```html
+<script type="text/javascript" src="path/to/nd.min.js"></script>
 ```
 
 ## Usage
