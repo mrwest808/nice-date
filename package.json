@@ -4,9 +4,9 @@
   "description": "JavaScript date utility library",
   "main": "dist/nd.js",
   "scripts": {
-    "clear": "rm -rf dist",
+    "clear": "rm -rf dist && rm -rf nd.min.js",
     "watch": "babel src -w --out-dir dist",
-    "prod": "babel src -c true --out-dir dist",
+    "prod": "babel src -c true --out-dir dist && webpack",
     "dev": "babel src --out-dir dist",
     "test": "mocha test/test.js"
   },
@@ -21,14 +21,17 @@
     "calendar"
   ],
   "author": "Johan West",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/mrwest808/nice-date"
   },
   "devDependencies": {
     "babel": "^4.7.8",
+    "babel-core": "^4.7.9",
+    "babel-loader": "^4.1.0",
     "chai": "^2.1.1",
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "webpack": "^1.7.3"
   }
 }

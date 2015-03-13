@@ -4,13 +4,13 @@
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-  - [Default Options](#default-options)
   - [Instantiate](#instantiate)
+  - [daysOf](#daysof)
   - [get](#get)
   - [diff](#diff)
   - [add](#add)
   - [sub](#sub)
-  - [daysOf](#daysof)
+  - [Default Options](#default-options)
 3. [Upcoming](#upcoming)
 4. [License](#license)
 
@@ -30,85 +30,6 @@ var NiceDate = require('nice-date');
 
 ## Usage
 
-### Default Options
-
-Options determine how date related strings are displayed, below are the default options.
-
-```javascript
-{
-
-  months: [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ],
-
-  monthsShort: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ],
-
-  days: [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ],
-
-  daysShort: [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat"
-  ],
-
-  /**
-   * Short representations of time measurements.
-   *
-   * @type {Object}
-   */
-  indicators: {
-    year:         "y",
-    month:        "m",
-    week:         "w",
-    day:          "d",
-    hour:         "h",
-    minute:       "m",
-    second:       "s",
-    milliseconds: "ms",
-    past:         "ago",
-    future:       "in",
-    now:          "Just now"
-  }
-
-}
-```
-
 ### Instantiate
 
 > new NiceDate([date, opts])
@@ -121,6 +42,45 @@ var date = new NiceDate(null, {
     milliseconds: "milli"
   }
 });
+```
+
+### daysOf
+
+> NiceDate.daysOf(measure)
+
+Extract the number of days within a given time measure, e.g. number of days in the current (relative to instantiated date) week or month. Each day is returned as an array element, represented by a unix timestamp.
+
+```javascript
+var date = new NiceDate();
+
+date.daysOf("week"); // -> [1425859200000, 1425945600000, ...]
+date.daysOf("w");    // -> [1425859200000, 1425945600000, ...]
+
+date.daysOf("month"); // -> [1425164400000, 1425250800000, ...]
+date.daysOf("m");     // -> [1425164400000, 1425250800000, ...]
+
+date.daysOf("calendarMonth"); // -> see below
+date.daysOf("cm");            // -> see below
+```
+
+While the **month** measure will collect all days between the first and the last day of the month, **calendarMonth** will in addition collect days between the month start and the first day of that week, as well as the days between the month end and the last day of that week. Useful when working with e.g. a calendar.
+
+```javascript
+date.daysOf("week").forEach(function(day) {
+  console.log(new NiceDate(day).get("weekday"));
+});
+```
+
+Console output:
+
+```
+-> Monday
+-> Tuesday
+-> Wednesday
+-> Thursday
+-> Friday
+-> Saturday
+-> Sunday
 ```
 
 ### get
@@ -229,49 +189,88 @@ date.add(1, "y").get("date");     // -> "2016-03-12"
 
 Opposite of *NiceDate.add*.
 
-### daysOf
+### Default Options
 
-> NiceDate.daysOf(measure)
-
-Extract the number of days within a given time measure, e.g. number of days in the current (relative to instantiated date) week or month. Each day is returned as an array element, represented by a unix timestamp.
+Options determine how date related strings are displayed, below are the default options.
 
 ```javascript
-var date = new NiceDate();
+{
 
-date.daysOf("week"); // -> [1425859200000, 1425945600000, ...]
-date.daysOf("w");    // -> [1425859200000, 1425945600000, ...]
+  months: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
 
-date.daysOf("month"); // -> [1425164400000, 1425250800000, ...]
-date.daysOf("m");     // -> [1425164400000, 1425250800000, ...]
+  monthsShort: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
 
-date.daysOf("calendarMonth"); // -> see below
-date.daysOf("cm");            // -> see below
-```
+  days: [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ],
 
-While the **month** measure will collect all days between the first and the last day of the month, **calendarMonth** will in addition collect days between the month start and the first day of that week, as well as the days between the month end and the last day of that week. Useful when working with e.g. a calendar.
+  daysShort: [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+  ],
 
-```javascript
-date.daysOf("week").forEach(function(day) {
-  console.log(new NiceDate(day).get("weekday"));
-});
-```
+  /**
+   * Short representations of time measurements.
+   *
+   * @type {Object}
+   */
+  indicators: {
+    year:         "y",
+    month:        "m",
+    week:         "w",
+    day:          "d",
+    hour:         "h",
+    minute:       "m",
+    second:       "s",
+    milliseconds: "ms",
+    past:         "ago",
+    future:       "in",
+    now:          "Just now"
+  }
 
-Console output:
-
-```
--> Monday
--> Tuesday
--> Wednesday
--> Thursday
--> Friday
--> Saturday
--> Sunday
+}
 ```
 
 ## Upcoming
 
 - General improvements and tweaks.
-- Add a browser version.
 
 ## License
 
