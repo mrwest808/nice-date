@@ -2,8 +2,8 @@
 
 > Tiny dependency-free JavaScript date utility library
 
-1. [Installation](#installation)
-2. [Usage](#usage)
+- [Installation](#installation)
+- [Usage](#usage)
   - [Instantiate](#instantiate)
   - [daysOf](#daysof)
   - [get](#get)
@@ -11,8 +11,8 @@
   - [add](#add)
   - [sub](#sub)
   - [Default Options](#default-options)
-3. [Upcoming](#upcoming)
-4. [License](#license)
+- [Upcoming](#upcoming)
+- [License](#license)
 
 ## Installation
 
