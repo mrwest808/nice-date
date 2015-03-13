@@ -3,6 +3,8 @@
 > Tiny dependency-free JavaScript date utility library
 
 - [Installation](#installation)
+  - [npm](#npm)
+  - [bower](#bower)
 - [Usage](#usage)
   - [Instantiate](#instantiate)
   - [daysOf](#daysof)
@@ -16,12 +18,12 @@
 
 ## Installation
 
-### Node.js
+### npm
 
 Install with npm.
 
 ```
-npm i --save nice-date
+npm i nice-date --save
 ```
 
 Require in project.
@@ -30,12 +32,10 @@ Require in project.
 var NiceDate = require('nice-date');
 ```
 
-### Browser
+### bower
 
-Save [minified browser version](https://raw.githubusercontent.com/mrwest808/nice-date/master/nd.min.js) locally and include in a script tag.
-
-```html
-<script type="text/javascript" src="path/to/nd.min.js"></script>
+```
+bower install nice-date --save
 ```
 
 ## Usage

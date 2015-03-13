@@ -1,0 +1,28 @@
+{
+  "name": "nice-date",
+  "version": "0.1.2",
+  "homepage": "https://github.com/mrwest808/nice-date",
+  "authors": [
+    "Johan West <hello@johanwest.com>"
+  ],
+  "description": "JavaScript date utility library",
+  "main": "nd.min.js",
+  "keywords": [
+    "tiny",
+    "js",
+    "date",
+    "utility",
+    "util",
+    "span",
+    "format",
+    "calendar"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
