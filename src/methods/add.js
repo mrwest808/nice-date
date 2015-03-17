@@ -8,6 +8,16 @@
 let add = {
 
   /**
+   * Add minutes to a date.
+   *
+   * @param  {Number} n
+   */
+  minutes(n) {
+    n = n * 60 * 1000;
+    this.d.setTime(this.d.getTime() + n);
+  },
+
+  /**
    * Add days to a date.
    *
    * @param {Number} n
@@ -46,6 +56,8 @@ let add = {
 };
 
 // Register aliases
+add.mi = add.minutes;
+add.minute = add.minutes;
 add.d = add.days;
 add.day = add.days;
 add.w = add.weeks;

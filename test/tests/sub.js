@@ -3,6 +3,26 @@
 module.exports = function(expect, test, NiceDate) {
   describe("NiceDate.prototype.sub", function() {
 
+    describe("sub.minutes", function() {
+      var now = Date.now(),
+          normal = new NiceDate(now).sub(120, "minutes"),
+          alias1 = new NiceDate(now).sub(120, "minute"),
+          alias2 = new NiceDate(now).sub(120, "mi");
+
+      describe("value", function() {
+        it("should be decremented correctly", function() {
+          expect(normal.diff()).to.equal("2h ago");
+        });
+
+        describe("aliases", function() {
+          it("should be defined correctly", function() {
+            expect(alias1.get("u")).to.equal(normal.get("u"));
+            expect(alias2.get("u")).to.equal(normal.get("u"));
+          });
+        });
+      });
+    });
+
     describe("sub.days", function() {
       var now = Date.now(),
           normal = new NiceDate(now).sub(1, "days"),
@@ -10,7 +30,7 @@ module.exports = function(expect, test, NiceDate) {
           alias2 = new NiceDate(now).sub(1, "d");
 
       describe("value", function() {
-        it("should be incremented correctly", function() {
+        it("should be decremented correctly", function() {
           expect(normal.diff()).to.equal("24h ago");
         });
       });
@@ -30,7 +50,7 @@ module.exports = function(expect, test, NiceDate) {
           alias2 = new NiceDate(now).sub(2, "w");
 
       describe("value", function() {
-        it("should be incremented correctly", function() {
+        it("should be decremented correctly", function() {
           expect(normal.diff()).to.equal("2w ago");
         });
       });
@@ -50,7 +70,7 @@ module.exports = function(expect, test, NiceDate) {
           alias2 = new NiceDate(now).sub(2, "m");
 
       describe("value", function() {
-        it("should be incremented correctly", function() {
+        it("should be decremented correctly", function() {
           expect(normal.diff()).to.equal("2m ago");
         });
       });
@@ -70,7 +90,7 @@ module.exports = function(expect, test, NiceDate) {
           alias2 = new NiceDate(now).sub(2, "y");
 
       describe("value", function() {
-        it("should be incremented correctly", function() {
+        it("should be decremented correctly", function() {
           expect(normal.diff()).to.equal("2y ago");
         });
       });

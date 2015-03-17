@@ -174,7 +174,11 @@ waaay.diff();  // -> "in 3y"
 Add *number* amount of *format* to a date.
 
 ```javascript
-var date = new NiceDate("2015-03-12");
+var date = new NiceDate("2015-03-12 08:00");
+
+date.add(10, "minutes").get("dt"); // -> "2015-03-12 08:10"
+date.add(10, "minute").get("dt");  // -> "2015-03-12 08:10"
+date.add(10, "mi").get("dt");      // -> "2015-03-12 08:10"
 
 date.add(1, "days").get("date"); // -> "2015-03-13"
 date.add(1, "day").get("date");  // -> "2015-03-13"

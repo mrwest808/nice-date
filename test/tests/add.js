@@ -3,6 +3,26 @@
 module.exports = function(expect, test, NiceDate) {
   describe("NiceDate.prototype.add", function() {
 
+    describe("add.minutes", function() {
+      var now = Date.now(),
+          normal = new NiceDate(now).add(120, "minutes"),
+          alias1 = new NiceDate(now).add(120, "minute"),
+          alias2 = new NiceDate(now).add(120, "mi");
+
+      describe("value", function() {
+        it("should be incremented correctly", function() {
+          expect(normal.diff()).to.equal("in 2h");
+        });
+
+        describe("aliases", function() {
+          it("should be defined correctly", function() {
+            expect(alias1.get("u")).to.equal(normal.get("u"));
+            expect(alias2.get("u")).to.equal(normal.get("u"));
+          });
+        });
+      });
+    });
+
     describe("add.days", function() {
       var now = Date.now(),
           normal = new NiceDate(now).add(1, "days"),
