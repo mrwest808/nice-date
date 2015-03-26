@@ -1,1 +1,1 @@
-"use strict";var is={undefined:function undefined(item){return typeof item === "undefined";}, object:function object(obj){return is.undefined(obj)?false:obj.constructor === Object;}, empty:function empty(item){}};module.exports = Object.create(is);
+"use strict";var is={undefined:function undefined(item){return typeof item === "undefined";}, object:function object(obj){return is.undefined(obj)?false:obj.constructor === Object;}, empty:function empty(item){}};module.exports = is;
