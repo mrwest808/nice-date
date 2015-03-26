@@ -39,10 +39,11 @@ export default class NiceDate {
   /**
    * Display difference between this.d and now in a nice format.
    *
+   * @param  {String} format [Optional]
    * @return {String}
    */
-  diff() {
-    let fn = m.diff;
+  diff(format) {
+    let fn = (!format) ? m.diff.default : m.diff[format];
     if(!fn)
       throw new ReferenceError("'diff'");
 
