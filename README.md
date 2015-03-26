@@ -169,9 +169,7 @@ waaay.diff();  // -> "in 3y"
 // You can also pass a formatting parameter to get a raw value
 past.diff("minutes"); // -> 127
 
-/**
- * Available formatting options.
- */
+// Available formatting options
 past.diff("minutes"); // alias: "mi"
 past.diff("hours");   // alias: "h"
 past.diff("days");    // alias: "d"
