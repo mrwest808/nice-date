@@ -65,7 +65,7 @@ diff.w = diff.weeks;
 diff.m = diff.months;
 diff.y = diff.years;
 
-export default Object.create(diff);
+export default diff;
 
 /**
  * Get time diff in milliseconds.

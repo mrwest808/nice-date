@@ -139,4 +139,4 @@ get.datetime = get.isoDateTime;
 get.dt = get.isoDateTime;
 get.isodt = get.isoDateTime;
 
-export default Object.create(get);
+export default get;

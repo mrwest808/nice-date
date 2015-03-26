@@ -67,4 +67,4 @@ add.month = add.months;
 add.y = add.years;
 add.year = add.years;
 
-export default Object.create(add);
+export default add;

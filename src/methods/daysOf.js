@@ -73,4 +73,4 @@ daysOf.w = daysOf.week;
 daysOf.m = daysOf.month;
 daysOf.cm = daysOf.calendarMonth;
 
-export default Object.create(daysOf);
+export default daysOf;

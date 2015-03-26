@@ -97,4 +97,4 @@ let utils = {
 
 };
 
-export default Object.create(utils);
+export default utils;
