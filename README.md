@@ -152,7 +152,7 @@ date.get("isodt");       // -> "2015-03-12 01:00"
 
 ### diff
 
-> NiceDate.diff()
+> NiceDate.diff([format])
 
 Displays the time difference between the date and now.
 
@@ -165,6 +165,19 @@ var past = new NiceDate("2015-03-12 09:52"),
 past.diff();   // -> "8m ago"
 future.diff(); // -> "in 2h"
 waaay.diff();  // -> "in 3y"
+
+// You can also pass a formatting parameter to get a raw value
+past.diff("minutes"); // -> 127
+
+/**
+ * Available formatting options.
+ */
+past.diff("minutes"); // alias: "mi"
+past.diff("hours");   // alias: "h"
+past.diff("days");    // alias: "d"
+past.diff("weeks");   // alias: "w"
+past.diff("months");  // alias: "m"
+past.diff("years");   // alias: "y"
 ```
 
 ### add
