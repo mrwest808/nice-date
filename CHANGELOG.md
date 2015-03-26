@@ -1,3 +1,11 @@
+## 0.1.5 (2015-03-26)
+
+### NiceDate.prototype.diff
+
+#### New features
+
+- Additions to `.diff` prototype.
+
 ## 0.1.4 (2015-03-18)
 
 ### NiceDate.prototype.add
