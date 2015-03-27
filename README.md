@@ -167,7 +167,7 @@ future.diff(); // -> "in 2h"
 waaay.diff();  // -> "in 3y"
 
 // You can also pass a formatting parameter to get a raw value
-past.diff("minutes"); // -> 127
+past.diff("minutes"); // -> 8
 
 // Available formatting options
 past.diff("minutes"); // alias: "mi"
