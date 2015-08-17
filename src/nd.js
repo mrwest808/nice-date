@@ -99,9 +99,24 @@ export default class NiceDate {
   daysOf(measure) {
     let fn = m.daysOf[measure];
     if(!fn)
-      throw new ReferenceError("'days' - invalid measure");
+      throw new ReferenceError("'daysOf' - invalid measure");
 
     return fn.apply(this);
+  }
+
+  /**
+   * Increase time to the next `measure`.
+   *
+   * @param  {String}   measure
+   * @return {Instance}
+   */
+  next(measure) {
+    let fn = m.next[measure];
+    if(!fn)
+      throw new ReferenceError("'next' - invalid measure");
+
+    fn.apply(this);
+    return this;
   }
 
 }

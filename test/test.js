@@ -13,3 +13,4 @@ require('./tests/diff')(expect, test, NiceDate);
 require('./tests/add')(expect, test, NiceDate);
 require('./tests/sub')(expect, test, NiceDate);
 require('./tests/daysOf')(expect, test, NiceDate);
+require('./tests/next')(expect, test, NiceDate);
