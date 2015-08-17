@@ -109,5 +109,14 @@ module.exports = function(expect, test, NiceDate) {
       });
     });
 
+    describe('get.time', function() {
+      describe('value', function() {
+        test.nonEmptyString(date.get("time"));
+      });
+      describe('alias', function() {
+        test.defined(date.get('t'));
+      });
+    });
+
   });
 };

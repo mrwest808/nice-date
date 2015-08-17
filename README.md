@@ -2,6 +2,8 @@
 
 > Tiny dependency-free JavaScript date utility library
 
+Rewrite to clean up & remove mutability coming up.
+
 - [Installation](#installation)
   - [npm](#npm)
   - [bower](#bower)
@@ -13,7 +15,6 @@
   - [add](#add)
   - [sub](#sub)
   - [Default Options](#default-options)
-- [Upcoming](#upcoming)
 - [License](#license)
 
 ## Installation
@@ -148,6 +149,10 @@ date.get("isoDateTime"); // -> "2015-03-12 01:00"
 date.get("datetime");    // -> "2015-03-12 01:00"
 date.get("dt");          // -> "2015-03-12 01:00"
 date.get("isodt");       // -> "2015-03-12 01:00"
+
+// Get time
+date.get("time"); // -> "01:00"
+date.get("t");    // -> "01:00"
 ```
 
 ### diff
@@ -292,10 +297,6 @@ Options determine how date related strings are displayed, below are the default 
 
 }
 ```
-
-## Upcoming
-
-- General improvements and tweaks.
 
 ## License
 

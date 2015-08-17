@@ -117,8 +117,18 @@ let get = {
    * @return {String}
    */
   isoDateTime() {
-    let [y, m, d, h, mi] = utl.extract(this.d);
-    return `${y}-${m}-${d} ${h}:${mi}`;
+    let [y, m, d, hh, mi] = utl.extract(this.d);
+    return `${y}-${m}-${d} ${hh}:${mi}`;
+  },
+
+  /**
+   * Show time portion of date.
+   *
+   * @return {String}
+   */
+  time() {
+    let [y, m, d, hh, mi] = utl.extract(this.d);
+    return `${hh}:${mi}`;
   }
 
 };
@@ -138,5 +148,6 @@ get.isod = get.isoDate;
 get.datetime = get.isoDateTime;
 get.dt = get.isoDateTime;
 get.isodt = get.isoDateTime;
+get.t = get.time;
 
 export default get;
