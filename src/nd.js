@@ -36,6 +36,14 @@ export default class NiceDate {
     return fn.apply(this);
   }
 
+  set(format, ...args) {
+    let fn = m.set[format];
+    if(!fn)
+      throw new ReferenceError("'set' - invalid format");
+
+    return fn.apply(this, args);
+  }
+
   /**
    * Display difference between this.d and now in a nice format.
    *

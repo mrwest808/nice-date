@@ -8,6 +8,7 @@ var test = require('./helpers'),
 
 require('./tests/instantiate')(expect, test, NiceDate);
 require('./tests/get')(expect, test, NiceDate);
+require('./tests/set')(expect, test, NiceDate);
 require('./tests/diff')(expect, test, NiceDate);
 require('./tests/add')(expect, test, NiceDate);
 require('./tests/sub')(expect, test, NiceDate);
