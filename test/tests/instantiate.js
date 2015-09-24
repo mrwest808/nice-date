@@ -21,7 +21,7 @@ module.exports = function(expect, test, NiceDate) {
         expect(date.o.indicators.year).to.equal("x");
       });
       it("should keep unchanged defaults", function() {
-        expect(date.o.indicators.month).to.equal("m");
+        expect(date.o.indicators.month).to.equal("mn");
       });
     });
 

@@ -71,7 +71,7 @@ module.exports = function(expect, test, NiceDate) {
 
       describe("value", function() {
         it("should be incremented correctly", function() {
-          expect(normal.diff()).to.equal("in 2m");
+          expect(normal.diff()).to.equal("in 2mn");
         });
       });
 

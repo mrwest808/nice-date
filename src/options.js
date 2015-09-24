@@ -64,11 +64,11 @@ let defaults = {
    */
   indicators: {
     year:         "y",
-    month:        "m",
+    month:        "mn",
     week:         "w",
     day:          "d",
     hour:         "h",
-    minute:       "mi",
+    minute:       "m",
     second:       "s",
     milliseconds: "ms",
     past:         "ago",

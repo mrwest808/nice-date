@@ -71,7 +71,7 @@ module.exports = function(expect, test, NiceDate) {
 
       describe("value", function() {
         it("should be decremented correctly", function() {
-          expect(normal.diff()).to.equal("2m ago");
+          expect(normal.diff()).to.equal("2mn ago");
         });
       });
 
