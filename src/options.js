@@ -68,7 +68,7 @@ let defaults = {
     week:         "w",
     day:          "d",
     hour:         "h",
-    minute:       "m",
+    minute:       "mi",
     second:       "s",
     milliseconds: "ms",
     past:         "ago",
